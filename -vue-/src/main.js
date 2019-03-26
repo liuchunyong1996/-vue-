@@ -3,9 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Card, Button, Tab, Tabs, Lazyload } from 'vant'
+import { NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Card, Button, Tab, Tabs, Lazyload, Stepper, Switch, SubmitBar } from 'vant'
 import axios from 'axios'
-
+import store from './store'
 /* eslint-disable no-new */
 import moment from 'moment'
 Vue.prototype.$http = axios
@@ -24,7 +24,9 @@ Vue
   .use(Tab)
   .use(Tabs)
   .use(Lazyload, options)
-
+  .use(Stepper)
+  .use(Switch)
+  .use(SubmitBar)
 // Vue.config.productionTip = false
 
 // 全局过滤器
@@ -34,5 +36,6 @@ Vue.filter('datemt', (data, str = 'YYYY MM DD hh:mm:ss') => {
 new Vue({
   el: '#app',
   render: c => c(App),
-  router
+  router,
+  store
 })

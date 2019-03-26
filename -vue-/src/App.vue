@@ -17,7 +17,7 @@
     <van-tabbar v-model="active">
     <van-tabbar-item icon="wap-home" to="/fly">首页</van-tabbar-item>
     <van-tabbar-item icon="contact" to="/svip">会员</van-tabbar-item>
-    <van-tabbar-item icon="shopping-cart-o" info="5" to="/vip">购物车</van-tabbar-item>
+    <van-tabbar-item icon="shopping-cart-o" :info="this.$store.getters.getAllCount" to="/vip" id="cart">购物车</van-tabbar-item>
     <van-tabbar-item icon="search" to="/xy">搜索</van-tabbar-item>
     </van-tabbar>
 
@@ -36,7 +36,8 @@ export default {
   },
   methods: {
     onClickLeft () {
-      location.href = 'App.vue'
+      this.$router.back()
+      // 返回上一层的组件
     },
     onClickRight () {
       Toast('对不起没有按钮')

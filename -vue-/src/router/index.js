@@ -8,6 +8,8 @@ import newlist from '../components/news/news'
 import newinfo from '../components/news/newsinfo'
 import photo from '../components/photo/photo'
 import photoinfo from '../components/photo/photoinfo'
+import shop from '../components/shop/Shop'
+import shopinfo from '../components/shop/shopinfo'
 
 Vue.use(VueRouter)
 
@@ -47,6 +49,15 @@ export default new VueRouter({
   {
     path: '/home/photoinfo/:id',
     component: photoinfo
+  },
+  {
+    path: '/home/goodslist',
+    component: shop
+  },
+  {
+    path: '/home/shopinfo/:id',
+    component: shopinfo,
+    name: 'shopinfo'
   }
 
   ]

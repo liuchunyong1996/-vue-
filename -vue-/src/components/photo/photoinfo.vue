@@ -26,6 +26,7 @@
   </div>
 </template>
 <script>
+
 import comment from '../../Subcomponents/comment'
 import { ImagePreview } from 'vant'
 
